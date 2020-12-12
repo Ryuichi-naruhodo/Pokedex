@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import {
-  Grid, Button, Typography, CircularProgress, LinearProgress,
+  Grid, Button, Typography, CircularProgress,
 } from '@material-ui/core';
 import axios from 'axios';
-import useStyles from './useStyles';
+import useStyles from '../components/useStyles';
 import StatsPokemon from '../components/StatsPokemon';
+import PokeDetails from '../components/PokeDetails';
 
 const PageDetails = () => {
   const urlPoke = 'https://pokeapi.co/api/v2/pokemon/';
@@ -27,7 +28,7 @@ const PageDetails = () => {
         setPokeData(poke.data);
         setPokeType(poke.data.types);
         setPokeDescription(descri.data);
-        const stats = poke.data.stats.map((item, key) => ({
+        const stats = poke.data.stats.map((item) => ({
           stat: item.base_stat,
           type: item.stat.name,
         }));
@@ -40,6 +41,7 @@ const PageDetails = () => {
     };
     getDataPoke();
   }, []);
+
   const handleClick = () => {
     history.push('/');
   };
@@ -56,58 +58,10 @@ const PageDetails = () => {
         </Typography>
         <Grid className={classes.containterPoke} justify="center" alignItems="center" container direction="row">
           <Grid item sm={1} />
-          <Grid className={classes.imgPoke} item xs={10} sm={4}>
-            {pokeData
-        && <img className={classes.imgPoke} src={pokeData.sprites.other.dream_world.front_default} alt="poke" />}
-          </Grid>
-          <Grid item className={classes.descriptionDetails} xs={10} sm={4}>
-            {pokeDescription
-          && (
-          <Typography className={classes.descriptionDetails}>
-            {pokeDescription.flavor_text_entries[1].flavor_text}
-          </Typography>
-          )}
-            <Grid
-              className={classes.Vcaracteristiques}
-              direction="row"
-              container
-              spacing={4}
-            >
-              <Grid className={classes.descriptionPokemonLeft} item xs={6}>
-                <p className={classes.stats}>Size</p>
-                <p className={classes.valueStats}>
-                  {pokeData.height / 10}
-                  {' '}
-                  m
-                </p>
-                <p className={classes.stats}>Weight</p>
-                <p className={classes.valueStats}>
-                  {pokeData.weight / 10}
-                  {' '}
-                  kg
-                </p>
-              </Grid>
-              <Grid className={classes.descriptionPokemonRight} item xs={6}>
-                <p className={classes.stats}>Type</p>
-                {pokeData && (
-                <p className={classes.valueStats}>
-                  {pokeType[0].type.name}
-                  {' '}
-                  {pokeType[1] && pokeType[1].type.name}
-                </p>
-                )}
-                <p className={classes.stats}>Habitat</p>
-                {pokeDescription.habitat ? (
-                  <p className={classes.valueStats}>
-                    {pokeDescription.habitat.name}
-                  </p>
-                ) : <p>None</p>}
-              </Grid>
-            </Grid>
-          </Grid>
+          <PokeDetails pokeType={pokeType} pokeData={pokeData} pokeDescription={pokeDescription} />
         </Grid>
         <Grid className={classes.table} container justify="center" alignItems="center" direction="row">
-          <Grid item xs={7} sm={6}>
+          <Grid item xs={7} sm={9}>
             <StatsPokemon pokeStats={pokeStats} />
           </Grid>
         </Grid>

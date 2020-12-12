@@ -5,6 +5,13 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     padding: 10,
+    height: '100%',
+  },
+  errorPage: {
+    flexGrow: 1,
+    padding: 10,
+    height: '100%',
+    backgroundColor: '#424244',
   },
   pagination: {
     paddingTop: 20,
@@ -25,8 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   pageDetails: {
     padding: 10,
-    height: '90%',
-    width: '100%',
+    height: '100%',
     background: 'linear-gradient(rgba(255,255,255,.95), rgba(255,255,255,.9)), url(https://st2.depositphotos.com/3213441/12022/v/950/depositphotos_120226648-stock-illustration-pokemon-go-pokeball-seamless-texture.jpg)',
     backgroundSize: 'contain',
   },
@@ -73,6 +79,13 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Pokemon',
     fontWeight: 100,
   },
+  buttonError: {
+    fontFamily: 'Pokemon',
+    fontWeight: 100,
+    backgroundColor: 'white',
+    margin: 15,
+    textDecoration: 'none',
+  },
   descriptionDetails: {
     width: '100%',
     fontFamily: 'Flexo',
@@ -103,6 +116,13 @@ const useStyles = makeStyles((theme) => ({
   },
   valueStats: {
     fontSize: 20,
+  },
+  margin: {
+    margin: theme.spacing(1),
+    paddingLeft: 25,
+  },
+  searchBarIcon: {
+    paddingBottom: 3,
   },
 }));
 

@@ -4,7 +4,8 @@ import { Grid } from '@material-ui/core';
 import Pagination from '@material-ui/lab/Pagination';
 import TitleHome from '../components/TitleHome';
 import CardPokemon from '../components/CardPokemon';
-import useStyles from './useStyles';
+import SearchBar from '../components/SearchBar';
+import useStyles from '../components/useStyles';
 import usePagination from '../components/usePagination';
 
 const Home = () => {
@@ -37,31 +38,20 @@ const Home = () => {
     setSearchResult(results);
   }, [searchPoke]);
 
-  const handleChange = (e) => {
-    setSearchPoke(e.target.value);
-  };
-
   const handleChangePage = (e, p) => {
     setPage(p);
     DATA.jump(p);
   };
 
+  const handleChange = (e) => {
+    setSearchPoke(e.target.value);
+    handleChangePage(0, 1);
+  };
+
   return (
-    <>
-      <div className={classes.root}>
-        <TitleHome />
-        <form style={{ padding: 20 }}>
-          <label className={classes.name} htmlFor="pokemon">
-            Find a specific pokemon :
-            <input
-              className={classes.input}
-              type="text"
-              value={searchPoke}
-              onChange={handleChange}
-            />
-          </label>
-        </form>
-      </div>
+    <div className={classes.root}>
+      <TitleHome />
+      <SearchBar handleChange={handleChange} searchPoke={searchPoke} />
       <Grid
         justify="center"
         alignItems="center"
@@ -88,7 +78,7 @@ const Home = () => {
           variant="outlined"
         />
       </Grid>
-    </>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Grid, Typography,
 } from '@material-ui/core';
-import useStyles from '../pages/useStyles';
+import useStyles from './useStyles';
 
 const TitleHome = () => {
   const classes = useStyles();

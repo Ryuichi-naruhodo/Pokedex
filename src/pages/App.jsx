@@ -7,18 +7,16 @@ import {
 import Home from './Home';
 import PageDetails from './PageDetails';
 import Navbar from '../components/Navbar';
+import PageError from './PageError';
 
 const App = () => (
 
   <Router>
     <Navbar />
     <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route path="/page-details/:id">
-        <PageDetails />
-      </Route>
+      <Route exact path="/" component={Home} />
+      <Route path="/page-details/:id" component={PageDetails} />
+      <Route component={PageError} />
     </Switch>
   </Router>
 

@@ -3,7 +3,7 @@ import {
 } from '@material-ui/core';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import useStyles from '../pages/useStyles';
+import useStyles from './useStyles';
 
 const CardPokemon = ({ pokemon }) => {
   const classes = useStyles();
