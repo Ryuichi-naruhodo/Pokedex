@@ -76,11 +76,11 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 10,
   },
   button: {
-    fontFamily: 'Pokemon',
+    fontFamily: 'Pokemon!important',
     fontWeight: 100,
   },
   buttonError: {
-    fontFamily: 'Pokemon',
+    fontFamily: 'Pokemon!important',
     fontWeight: 100,
     backgroundColor: 'white',
     margin: 15,
