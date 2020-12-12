@@ -18,7 +18,7 @@ const PageDetails = () => {
   const [pokeType, setPokeType] = useState();
   const [pokeDescription, setPokeDescription] = useState();
   const [pokeStats, setPokeStats] = useState();
-  const [Loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getDataPoke = async () => {
@@ -34,7 +34,7 @@ const PageDetails = () => {
         }));
         setPokeStats(stats);
       } catch (error) {
-        console.error(error);
+        history.push('/error');
       } finally {
         setLoading(false);
       }
@@ -46,7 +46,7 @@ const PageDetails = () => {
     history.push('/');
   };
 
-  return (Loading ? <CircularProgress />
+  return (loading ? <CircularProgress />
     : (
       <div className={classes.pageDetails}>
         <Button className={classes.button} variant="contained" onClick={() => handleClick()}>Home</Button>

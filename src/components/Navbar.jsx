@@ -1,22 +1,9 @@
 import {
-  AppBar, Toolbar, Typography, makeStyles, fade,
+  AppBar, Toolbar, Typography,
 } from '@material-ui/core';
 import React from 'react';
-import './navbar.css';
 import { useHistory } from 'react-router-dom';
-
-const useStyles = makeStyles((theme) => ({
-  rootToolbar: {
-    flexGrow: 1,
-    backgroundColor: '#b51e1e',
-  },
-  buttons: {
-    borderRadius: theme.shape.borderRadius,
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-  },
-}));
+import useStyles from './useStyles';
 
 const NavBar = () => {
   const history = useHistory();
@@ -30,7 +17,7 @@ const NavBar = () => {
     <div>
       <AppBar className={classes.rootToolbar} position="static">
         <Toolbar className={classes.toolbar}>
-          <Typography variant="h5" className="logo" onClick={() => handleClick()}>
+          <Typography variant="h5" className={classes.logo} onClick={() => handleClick()}>
             EncycloPedex
           </Typography>
         </Toolbar>

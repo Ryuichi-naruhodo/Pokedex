@@ -7,6 +7,16 @@ const useStyles = makeStyles((theme) => ({
     padding: 10,
     height: '100%',
   },
+  logo: {
+    fontFamily: 'Pokemon!important',
+    fontWeight: 200,
+    flexGrow: 1,
+    cursor: 'pointer',
+  },
+  rootToolbar: {
+    flexGrow: 1,
+    backgroundColor: '#b51e1e',
+  },
   errorPage: {
     flexGrow: 1,
     padding: 10,
@@ -75,6 +85,14 @@ const useStyles = makeStyles((theme) => ({
   input: {
     marginLeft: 10,
   },
+  labelSearchBar: {
+    '& .MuiFormLabel-root': {
+      fontSize: 13,
+      color: 'white',
+      textTransform: 'capitalize',
+      fontFamily: 'Flexo',
+    },
+  },
   button: {
     fontFamily: 'Pokemon!important',
     fontWeight: 100,
@@ -122,7 +140,7 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: 25,
   },
   searchBarIcon: {
-    paddingBottom: 3,
+    paddingBottom: 5,
   },
 }));
 

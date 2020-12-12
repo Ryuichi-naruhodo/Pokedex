@@ -16,7 +16,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/page-details/:id" component={PageDetails} />
-      <Route component={PageError} />
+      <Route path="*" component={PageError} />
     </Switch>
   </Router>
 

@@ -13,7 +13,7 @@ const SearchBar = ({ searchPoke, handleChange }) => {
         </Grid>
         <Grid item>
           <TextField
-            className={classes.name}
+            className={classes.labelSearchBar}
             type="text"
             value={searchPoke}
             onChange={handleChange}
