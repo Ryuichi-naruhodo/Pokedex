@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   rootToolbar: {
     flexGrow: 1,
-    backgroundColor: '#b51e1e',
+    backgroundColor: '#b51e1e!important',
   },
   errorPage: {
     flexGrow: 1,
