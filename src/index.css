@@ -1,5 +1,15 @@
-@import url(//db.onlinewebfonts.com/c/51ba22ae06790efd464bde752a2cd9d1?family=Flexo);
-@import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);
+@font-face {
+  font-family: 'Pokemon';
+  src: url('./assets/PokemonSolid/PokemonSolid.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Flexo';
+  src: url('./assets/Flexo-Regular/Flexo-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body, html {
   margin: 0;
