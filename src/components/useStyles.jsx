@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     height: '2OOpx',
     width: '160px',
     margin: theme.spacing(1),
-    backgroundColor: '#757e8414',
+    backgroundColor: '#757e8414!important',
     padding: theme.spacing(1),
     cursor: 'pointer',
   },
