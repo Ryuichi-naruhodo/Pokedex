@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import useStyles from '../components/useStyles';
-import logo from '../assets/logoError.png';
+import logo from '../assets/404errorImage.png';
 
 const PageError = () => {
   const classes = useStyles();
@@ -15,7 +15,7 @@ const PageError = () => {
           </Button>
         </Link>
         <Grid container variant="contained" justify="center" alignItems="center" direction="row">
-          <img src={logo} width="600" height="350" alt="Error page" />
+          <img src={logo} width="800" height="520" alt="Error page" />
         </Grid>
       </div>
     </>
