@@ -50,6 +50,7 @@ const Home = () => {
 
   return (
     <div className={classes.root}>
+      <div className={classes.margin} />
       <TitleHome />
       <SearchBar handleChange={handleChange} searchPoke={searchPoke} />
       <Grid
