@@ -1,6 +1,6 @@
 .containerBar {
     text-align: left;
-    padding-left: 15px;
+    text-transform: capitalize;
     }
     
     .Bar0 {
@@ -39,4 +39,7 @@
     }
     .Bar5 > .progress-bar{
       background-color: #45aaf2;
+    }
+    .MuiPaginationItem-outlinedPrimary{
+      color:white!important
     }

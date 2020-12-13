@@ -70,6 +70,7 @@ const Home = () => {
         sm={12}
       >
         <Pagination
+          color="primary"
           count={count}
           size="large"
           page={page}

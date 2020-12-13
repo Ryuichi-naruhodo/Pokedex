@@ -8,10 +8,10 @@ const SearchBar = ({ searchPoke, handleChange }) => {
   return (
     <div className={classes.margin}>
       <Grid container spacing={1} alignItems="flex-end">
-        <Grid item>
-          <img src={icon} height={30} width={30} className={classes.searchBarIcon} alt="Pokeball" />
+        <Grid>
+          <img src={icon} height={40} width={40} className={classes.searchBarIcon} alt="Pokeball" />
         </Grid>
-        <Grid item>
+        <Grid item sm={11} className={classes.labelSearchBar}>
           <TextField
             className={classes.labelSearchBar}
             type="text"

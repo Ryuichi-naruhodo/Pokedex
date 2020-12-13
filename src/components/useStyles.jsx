@@ -4,7 +4,6 @@ const useStyles = makeStyles((theme) => ({
 
   root: {
     flexGrow: 1,
-    padding: 10,
     height: '100%',
   },
   logo: {
@@ -28,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
   pagination: {
     paddingTop: 20,
     paddingBottom: 20,
+    ' &.MuiPaginationItem-outlinedPrimary': {
+      color: 'white',
+    },
   },
   table: {
     textTransform: 'capitalize',
@@ -57,23 +59,23 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     color: 'white',
-    borderTop: '4px solid #504e4e',
-    borderBottom: '4px solid #504e4e',
     padding: 10,
     fontFamily: 'Flexo',
   },
   cardContainer: {
     textAlign: 'center',
-    height: '2OOpx',
-    width: '160px',
+    height: '230px',
+    width: '180px',
     margin: theme.spacing(1),
     backgroundColor: '#757e8414!important',
     cursor: 'pointer',
+    padding: 10,
   },
   icon: {
     margin: 'auto',
     height: 160,
     width: 160,
+    marginBottom: 15,
   },
   name: {
     color: 'white',
@@ -88,6 +90,8 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 10,
   },
   labelSearchBar: {
+    flexGrow: 1,
+    width: '30%',
     '& .MuiFormLabel-root': {
       fontSize: 13,
       color: 'white',
@@ -117,11 +121,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#30A7D6',
     borderTopLeftRadius: 5,
     borderBottomLeftRadius: 5,
+    padding: 10,
   },
   descriptionPokemonRight: {
     backgroundColor: '#30A7D6',
     borderTopRightRadius: 5,
     borderBottomRightRadius: 5,
+    padding: 10,
   },
   Vcaracteristiques: {
     paddingLeft: 25,

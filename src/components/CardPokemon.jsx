@@ -24,7 +24,7 @@ const CardPokemon = ({ pokemon }) => {
         className={classes.icon}
         image={`${imgPoke}${pokemon.id + 1}.png`}
       />
-      <p className={classes.name}>
+      <span className={classes.name}>
         #
         {' '}
         {pokemon.id + 1}
@@ -32,7 +32,7 @@ const CardPokemon = ({ pokemon }) => {
         :
         {' '}
         {pokemon.name}
-      </p>
+      </span>
     </Card>
   );
 };

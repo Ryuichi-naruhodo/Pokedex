@@ -53,30 +53,67 @@ const PageDetails = () => {
   if (error) return <PageError />;
 
   return (
-    <div className={classes.pageDetails}>
-      <Button className={classes.button} variant="contained" onClick={() => handleClick()}>Home</Button>
-      <Grid className={classes.containterPoke} justify="center" alignItems="center" container direction="row">
-        <Grid item sm={1} />
-        <PokeDetails pokeType={pokeType} pokeData={pokeData} pokeDescription={pokeDescription} />
-      </Grid>
-      <Grid container justify="center" direction="row">
-        <Grid item sm={1} />
-        <Grid item xs={12} sm={4}>
-          <Typography variant="h3" className={classes.nameDetails}>
-            N°
-            {id}
-            {' '}
-            {pokeData.name}
-          </Typography>
-          <Typography className={classes.descriptionDetails}>
-            {pokeDescription.flavor_text_entries[1].flavor_text}
-          </Typography>
+    <>
+      <div className={classes.pageDetails}>
+        <Button className={classes.button} variant="contained" onClick={() => handleClick()}>Home</Button>
+        <Grid className={classes.containterPoke} justify="center" alignItems="center" container direction="row" spacing={6}>
+          <Grid item sm={1} />
+          <Grid item xs={12} sm={4}>
+            <img className={classes.imgPoke} src={pokeData.sprites.other.dream_world.front_default} alt="poke" />
+            <div className={classes.pagination} />
+            <Typography variant="h3" className={classes.nameDetails}>
+              N°
+              {id}
+              {' '}
+              <span style={{ fontWeight: 'bold' }}>{pokeData.name}</span>
+            </Typography>
+            <Typography className={classes.descriptionDetails}>
+              {pokeDescription.flavor_text_entries[1].flavor_text}
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Grid className={classes.containterPoke} justify="center" alignItems="center" container direction="row">
+              <Grid className={classes.descriptionPokemonLeft} item sm={6}>
+                <p className={classes.stats}>Size</p>
+                <p className={classes.valueStats}>
+                  {pokeData.height / 10}
+                  {' '}
+                  m
+                </p>
+                <p className={classes.stats}>Weight</p>
+                <p className={classes.valueStats}>
+                  {pokeData.weight / 10}
+                  {' '}
+                  kg
+                </p>
+              </Grid>
+              <Grid className={classes.descriptionPokemonRight} item sm={6}>
+                <p className={classes.stats}>Type</p>
+                {pokeData && (
+                <p className={classes.valueStats}>
+                  {pokeType[0].type.name}
+                  {' '}
+                  {pokeType[1] && pokeType[1].type.name}
+                </p>
+                )}
+                <p className={classes.stats}>Habitat</p>
+                {pokeDescription.habitat ? (
+                  <p className={classes.valueStats}>
+                    {pokeDescription.habitat.name}
+                  </p>
+                ) : <p>None</p>}
+              </Grid>
+            </Grid>
+            <div className={classes.pagination} />
+            <StatsPokemon pokeStats={pokeStats} />
+          </Grid>
+          <Grid item sm={1} />
         </Grid>
-        <Grid item xs={12} sm={4}>
-          <StatsPokemon pokeStats={pokeStats} />
-        </Grid>
-      </Grid>
-    </div>
+        <div className={classes.pagination} />
+        <div className={classes.pagination} />
+        <div className={classes.pagination} />
+      </div>
+    </>
   );
 };
 
