@@ -5,7 +5,7 @@ import {
 } from '@material-ui/core';
 import axios from 'axios';
 import useStyles from '../components/useStyles';
-import StatsPokemon from '../components/StatsPokemon';
+import StatsPokemon from '../components/StatsPokemon/StatsPokemon';
 import PokeDetails from '../components/PokeDetails';
 import PageError from './PageError';
 
@@ -55,18 +55,24 @@ const PageDetails = () => {
   return (
     <div className={classes.pageDetails}>
       <Button className={classes.button} variant="contained" onClick={() => handleClick()}>Home</Button>
-      <Typography variant="h3" align="center" className={classes.nameDetails}>
-        {pokeData.name}
-        {' '}
-        N°
-        {id}
-      </Typography>
       <Grid className={classes.containterPoke} justify="center" alignItems="center" container direction="row">
         <Grid item sm={1} />
         <PokeDetails pokeType={pokeType} pokeData={pokeData} pokeDescription={pokeDescription} />
       </Grid>
-      <Grid className={classes.table} container justify="center" alignItems="center" direction="row">
-        <Grid item xs={7} sm={9}>
+      <Grid container justify="center" direction="row">
+        <Grid item sm={1} />
+        <Grid item xs={12} sm={4}>
+          <Typography variant="h3" className={classes.nameDetails}>
+            N°
+            {id}
+            {' '}
+            {pokeData.name}
+          </Typography>
+          <Typography className={classes.descriptionDetails}>
+            {pokeDescription.flavor_text_entries[1].flavor_text}
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={4}>
           <StatsPokemon pokeStats={pokeStats} />
         </Grid>
       </Grid>

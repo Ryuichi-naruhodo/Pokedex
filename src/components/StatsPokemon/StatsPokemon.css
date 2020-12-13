@@ -1,0 +1,42 @@
+.containerBar {
+    text-align: left;
+    padding-left: 15px;
+    }
+    
+    .Bar0 {
+      background-color: rgba(255, 0, 0, 0)!important;
+    }
+    .Bar1{
+      background-color: rgba(255, 0, 0, 0)!important;
+    }
+    .Bar2{
+      background-color: rgba(255, 0, 0, 0)!important;
+    }
+    .Bar3{
+      background-color: rgba(255, 0, 0, 0)!important;
+    }
+    .Bar4{
+      background-color: rgba(255, 0, 0, 0)!important;
+    }
+    .Bar5{
+      background-color: rgba(255, 0, 0, 0)!important;
+    }
+    
+    .Bar0 > .progress-bar{
+      background-color: #eb3b5a;
+    }
+    .Bar1 > .progress-bar{
+      background-color: #fa8231;
+    }
+    .Bar2 > .progress-bar{
+      background-color: #f7b731;
+    }
+    .Bar3 > .progress-bar{
+      background-color: #20bf6b;
+    }
+    .Bar4 > .progress-bar{
+      background-color: #0fb9b1;
+    }
+    .Bar5 > .progress-bar{
+      background-color: #45aaf2;
+    }

@@ -31,7 +31,8 @@ const useStyles = makeStyles((theme) => ({
   },
   table: {
     textTransform: 'capitalize',
-    marginTop: 40,
+    marginTop: 20,
+    marginBottom: 30,
   },
   imgPoke: {
     textAlign: 'center',
