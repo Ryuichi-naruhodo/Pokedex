@@ -11,19 +11,48 @@
   font-style: normal;
 }
 
-body, html {
+body , html {
   margin: 0;
+  min-height: -webkit-fill-available;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  background-color: #777474;
-  height:100%;
-  width:100%;
+  background-color: #2f3542!important;
 }
-#root{
-  height:100%;
+.Bar0 {
+  background-color: rgba(255, 0, 0, 0)!important;
 }
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.Bar1{
+  background-color: rgba(255, 0, 0, 0)!important;
+}
+.Bar2{
+  background-color: rgba(255, 0, 0, 0)!important;
+}
+.Bar3{
+  background-color: rgba(255, 0, 0, 0)!important;
+}
+.Bar4{
+  background-color: rgba(255, 0, 0, 0)!important;
+}
+.Bar5{
+  background-color: rgba(255, 0, 0, 0)!important;
+}
+
+.Bar0 > .progress-bar{
+  background-color: #eb3b5a;
+}
+.Bar1 > .progress-bar{
+  background-color: #fa8231;
+}
+.Bar2 > .progress-bar{
+  background-color: #f7b731;
+}
+.Bar3 > .progress-bar{
+  background-color: #20bf6b;
+}
+.Bar4 > .progress-bar{
+  background-color: #0fb9b1;
+}
+.Bar5 > .progress-bar{
+  background-color: #45aaf2;
 }

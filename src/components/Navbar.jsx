@@ -15,7 +15,7 @@ const NavBar = () => {
 
   return (
     <div>
-      <AppBar className={classes.rootToolbar} position="static">
+      <AppBar className={classes.rootToolbar} elevation={0} position="static">
         <Toolbar className={classes.toolbar}>
           <Typography variant="h5" className={classes.logo} onClick={() => handleClick()}>
             EncycloPedex

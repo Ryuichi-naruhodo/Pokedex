@@ -16,12 +16,14 @@ const useStyles = makeStyles((theme) => ({
   rootToolbar: {
     flexGrow: 1,
     backgroundColor: '#b51e1e!important',
+    '&.MuiPaper-elevation4': {
+      boxShadow: 0,
+    },
   },
   errorPage: {
     flexGrow: 1,
     padding: 10,
     height: '100%',
-    backgroundColor: '#424244',
   },
   pagination: {
     paddingTop: 20,
@@ -32,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 40,
   },
   imgPoke: {
-    backgroundColor: 'f2f2f26b',
     textAlign: 'center',
     minWidth: 200,
     minHeight: 350,
@@ -48,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
   containterPoke: {
     marginTop: 50,
+    backgroundColor: 'ffffff9e',
   },
   section: {
     textAlign: 'center',
@@ -65,7 +67,6 @@ const useStyles = makeStyles((theme) => ({
     width: '160px',
     margin: theme.spacing(1),
     backgroundColor: '#757e8414!important',
-    padding: theme.spacing(1),
     cursor: 'pointer',
   },
   icon: {
@@ -138,9 +139,12 @@ const useStyles = makeStyles((theme) => ({
   margin: {
     margin: theme.spacing(1),
     paddingLeft: 25,
+    marginBottom: 55,
+    marginTop: 40,
+
   },
   searchBarIcon: {
-    paddingBottom: 5,
+    marginBottom: 3,
   },
 }));
 

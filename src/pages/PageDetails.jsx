@@ -7,6 +7,7 @@ import axios from 'axios';
 import useStyles from '../components/useStyles';
 import StatsPokemon from '../components/StatsPokemon';
 import PokeDetails from '../components/PokeDetails';
+import PageError from './PageError';
 
 const PageDetails = () => {
   const urlPoke = 'https://pokeapi.co/api/v2/pokemon/';
@@ -14,11 +15,12 @@ const PageDetails = () => {
   const { id } = useParams();
   const history = useHistory();
   const classes = useStyles();
-  const [pokeData, setPokeData] = useState();
-  const [pokeType, setPokeType] = useState();
-  const [pokeDescription, setPokeDescription] = useState();
-  const [pokeStats, setPokeStats] = useState();
+  const [pokeData, setPokeData] = useState('');
+  const [pokeType, setPokeType] = useState('');
+  const [pokeDescription, setPokeDescription] = useState('');
+  const [pokeStats, setPokeStats] = useState('');
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
 
   useEffect(() => {
     const getDataPoke = async () => {
@@ -33,8 +35,8 @@ const PageDetails = () => {
           type: item.stat.name,
         }));
         setPokeStats(stats);
-      } catch (error) {
-        history.push('/error');
+      } catch (err) {
+        setError(err);
       } finally {
         setLoading(false);
       }
@@ -46,27 +48,29 @@ const PageDetails = () => {
     history.push('/');
   };
 
-  return (loading ? <CircularProgress />
-    : (
-      <div className={classes.pageDetails}>
-        <Button className={classes.button} variant="contained" onClick={() => handleClick()}>Home</Button>
-        <Typography variant="h3" align="center" className={classes.nameDetails}>
-          {pokeData.name}
-          {' '}
-          N°
-          {id}
-        </Typography>
-        <Grid className={classes.containterPoke} justify="center" alignItems="center" container direction="row">
-          <Grid item sm={1} />
-          <PokeDetails pokeType={pokeType} pokeData={pokeData} pokeDescription={pokeDescription} />
+  if (loading) return <CircularProgress />;
+
+  if (error) return <PageError />;
+
+  return (
+    <div className={classes.pageDetails}>
+      <Button className={classes.button} variant="contained" onClick={() => handleClick()}>Home</Button>
+      <Typography variant="h3" align="center" className={classes.nameDetails}>
+        {pokeData.name}
+        {' '}
+        N°
+        {id}
+      </Typography>
+      <Grid className={classes.containterPoke} justify="center" alignItems="center" container direction="row">
+        <Grid item sm={1} />
+        <PokeDetails pokeType={pokeType} pokeData={pokeData} pokeDescription={pokeDescription} />
+      </Grid>
+      <Grid className={classes.table} container justify="center" alignItems="center" direction="row">
+        <Grid item xs={7} sm={9}>
+          <StatsPokemon pokeStats={pokeStats} />
         </Grid>
-        <Grid className={classes.table} container justify="center" alignItems="center" direction="row">
-          <Grid item xs={7} sm={9}>
-            <StatsPokemon pokeStats={pokeStats} />
-          </Grid>
-        </Grid>
-      </div>
-    )
+      </Grid>
+    </div>
   );
 };
 

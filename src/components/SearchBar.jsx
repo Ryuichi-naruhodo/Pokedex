@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, TextField } from '@material-ui/core';
 import useStyles from './useStyles';
-import icon from '../assets/pikachuIcon.png';
+import icon from '../assets/pokeIcon.png';
 
 const SearchBar = ({ searchPoke, handleChange }) => {
   const classes = useStyles();
@@ -9,7 +9,7 @@ const SearchBar = ({ searchPoke, handleChange }) => {
     <div className={classes.margin}>
       <Grid container spacing={1} alignItems="flex-end">
         <Grid item>
-          <img src={icon} height={20} width={20} className={classes.searchBarIcon} alt="Pokeball" />
+          <img src={icon} height={30} width={30} className={classes.searchBarIcon} alt="Pokeball" />
         </Grid>
         <Grid item>
           <TextField
