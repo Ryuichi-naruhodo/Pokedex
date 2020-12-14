@@ -62,8 +62,14 @@ const PageDetails = () => {
     history.push(`/page-details/${numb + 1}`);
   };
 
-  if (loading) return <CircularProgress />;
-
+  if (loading) {
+    return (
+      <Grid style={{ height: '100%', width: '100%' }} justify="center" alignItems="center" container direction="row">
+        <CircularProgress />
+        ;
+      </Grid>
+    );
+  }
   if (error) return <PageError />;
 
   return (
