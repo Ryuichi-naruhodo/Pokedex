@@ -118,16 +118,25 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   descriptionPokemonLeft: {
+    display: 'grid',
+    justifyContent: 'center',
     backgroundColor: '#30A7D6',
     borderTopLeftRadius: 5,
     borderBottomLeftRadius: 5,
     padding: 10,
+    height: 220,
+    width: 130,
   },
+
   descriptionPokemonRight: {
+    display: 'grid',
+    justifyContent: 'center',
     backgroundColor: '#30A7D6',
     borderTopRightRadius: 5,
     borderBottomRightRadius: 5,
     padding: 10,
+    height: 220,
+    width: 130,
   },
   Vcaracteristiques: {
     paddingLeft: 25,
@@ -142,6 +151,7 @@ const useStyles = makeStyles((theme) => ({
   },
   valueStats: {
     fontSize: 20,
+    textTransform: 'capitalize',
   },
   margin: {
     margin: theme.spacing(1),
