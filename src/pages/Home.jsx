@@ -15,9 +15,9 @@ const Home = () => {
   const [searchPoke, setSearchPoke] = useState('');
   const [searchResult, setSearchResult] = useState([]);
   const [page, setPage] = useState(1);
-  const PER_PAGE = 28;
-  const DATA = usePagination(searchResult, PER_PAGE);
-  const count = Math.ceil(searchResult.length / PER_PAGE);
+  const perPage = 28;
+  const DATA = usePagination(searchResult, perPage);
+  const count = Math.ceil(searchResult.length / perPage);
 
   useEffect(() => {
     const displayPokedex = () => {

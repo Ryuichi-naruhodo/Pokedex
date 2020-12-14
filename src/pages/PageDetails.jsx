@@ -5,6 +5,7 @@ import {
 } from '@material-ui/core';
 import axios from 'axios';
 import useStyles from '../components/useStyles';
+import TopButtons from '../components/TopButtons';
 import StatsPokemon from '../components/StatsPokemon/StatsPokemon';
 import InfoPokemon from '../components/InfoPokemon';
 import ImagePokemonDescription from '../components/ImagePokemonDescription';
@@ -16,7 +17,7 @@ const PageDetails = () => {
   const { id } = useParams();
   const history = useHistory();
   const classes = useStyles();
-  const MAX_POKE = 649;
+  const maxPokemon = 649;
   const [pokeData, setPokeData] = useState('');
   const [pokeType, setPokeType] = useState('');
   const [pokeDescription, setPokeDescription] = useState('');
@@ -76,9 +77,13 @@ const PageDetails = () => {
     <>
       <div className={classes.pageDetails}>
         <Grid container direction="row" justify="space-between" alignItems="flex-start">
-          {id > 1 && <Button className={classes.button} variant="contained" onClick={() => previousClick(id)}>Previous</Button>}
-          <Button className={classes.button} variant="contained" onClick={() => handleClick()}>Home</Button>
-          {id < MAX_POKE && <Button className={classes.button} variant="contained" onClick={() => nextClick(id)}>Next</Button>}
+          <TopButtons
+            maxPoke={maxPokemon}
+            id={id}
+            handleClick={handleClick}
+            previousClick={previousClick}
+            nextClick={nextClick}
+          />
         </Grid>
         <Grid className={classes.containterPoke} justify="center" alignItems="center" container direction="row" spacing={6}>
           <Grid item sm={1} />
