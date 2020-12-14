@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import {
-  Grid, Button, Typography, CircularProgress,
+  Grid, CircularProgress,
 } from '@material-ui/core';
 import axios from 'axios';
 import useStyles from '../components/useStyles';
