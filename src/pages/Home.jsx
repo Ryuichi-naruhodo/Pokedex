@@ -41,6 +41,7 @@ const Home = () => {
   const handleChangePage = (e, p) => {
     setPage(p);
     DATA.jump(p);
+    window.scrollTo(0, 0);
   };
 
   const handleChange = (e) => {
